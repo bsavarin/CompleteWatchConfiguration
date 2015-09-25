@@ -1,4 +1,9 @@
-    function saveOptions() {
+(function () { 
+ 	saveOptions(); 
+	submitHandler(); 
+ })(); 
+
+   function saveOptions() {
         var invertSelect = document.getElementById("invert_select");
 		var tempDisplay = document.getElementById("temp_display");
 		var bgcolourDisplay = document.getElementById("bgcolour_display");
@@ -23,11 +28,17 @@
         return options;
       };
 
-      var submitButton = document.getElementById("submitButton");
-      submitButton.addEventListener("click", 
-        function() {
+	  function submitHandler(){
+		  var submitButton = document.getElementById("submitButton");
+		  submitButton.addEventListener("click", function() {
           console.log("Submit");
           var options = saveOptions();
+		  
+		  var return_to = getQueryParam('return_to', 'pebblejs://close#');
+		  document.location = return_to + encodeURIComponent(JSON.stringify(options()));
+	  });
+	}
+		  
 		// Something like this to get query variables.
 		function getQueryParam(variable, default_) {
 			var query = location.search.substring(1);
@@ -39,8 +50,5 @@
 			}
 			return default_ || false;
 		}	
-		var return_to = getQueryParam('return_to', 'pebblejs://close#');
-		document.location = return_to + encodeURIComponent(JSON.stringify(options));
-      }, 
-      false);
+		
   
