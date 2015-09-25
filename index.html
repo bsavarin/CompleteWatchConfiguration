@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0" name="viewport">
+  <div class="item-container">
+    <title>Complete Watch Configuration</title>
+  </div>
+  <link rel="stylesheet" href="slate/dist/css/slate.css">
+</head>
+<body>
+  <form id="main-form">
+  <H1>Complete Watch Configuration</H1>
+    <div class="item-container">
+      <div class="item-container-content">
+        <div class="item">
+         Use this configuration page to choose the settings you would like applied to this app.
+        </div>
+      </div>
+    </div>
+
+    <div class="item-container">
+      <div class="item-container-header">Invert watchface (for Pebble and Pebble Steel only):</div>
+      <div class="item-container-content">
+        <label class="item">
+          Invert watchface
+          <input id="invert_select" type="checkbox" class="item-toggle" name="toggle-1">
+        </label>
+      </div>
+      <div class="item-container-footer">
+      </div>
+    </div>
+
+    <div class="item-container">
+      <div class="item-container-header">Temperature</div>
+      <div class="item-container-content">
+        <label class="item">
+          Choose Celsius or Fahrenheit
+          <select id="temp_display" name="select-1" dir='rtl' class="item-select">
+            <option class="item-select-option" selected>Celsius</option>
+            <option class="item-select-option">Fahrenheit</option>
+          </select>
+        </label>
+      </div>
+    </div>
+
+    <div class="item-container">
+      <div class="item-container-header">Colour</div>
+      <div class="item-container-content">
+        <label class="item">
+          Background Colour Picker
+          <input id="bgcolour_display" type="text" class="item-color item-color-normal" name="color-1" value="0x000000">
+        </label>
+		<label class="item">
+          Foreground Colour Picker
+          <input id="fgcolour_display" type="text" class="item-color item-color-normal" name="color-1" value="0x55FF00">
+        </label>
+      </div>
+	  <div class="item-container-footer">The settings above will only change on the watch after pressing the SEND button below.</div>
+    </div>
+
+    <div class="item-container">
+      <div class="button-container">
+        <input id ="submitButton" type="button" class="item-button" value="SEND">
+      </div>
+    </div>
+  </form>
+  
+  <script type="text/javascript" src="slate/dist/js/slate.js"></script>
+  <script type="text/javascript" src="js/main.js"></script>
+
+ <script>
+	/*  Setup to allow easy adding more options later
+    function saveOptions() {
+        var invertSelect = document.getElementById("invert_select");
+		var tempDisplay = document.getElementById("temp_display");
+		var bgcolourDisplay = document.getElementById("bgcolour_display");
+		var fgcolourDisplay = document.getElementById("fgcolour_display");
+		var options = {
+          "invert": invertSelect.options[invertSelect.selectedIndex].value,
+		  "temperature": tempDisplay.options[tempDisplay.selectedIndex].value,
+		  "bgcolour": bgcolourDisplay.options[bgcolourDisplay.selectedIndex].value,
+		  "fgcolour": fgcolourDisplay.options[fgcolourDisplay.selectedIndex].value
+		}  
+
+			localStorage.setItem("invert", invertSelect.options[invertSelect.selectedIndex].value);
+			localStorage.setItem("temperature",tempDisplay.options[tempDisplay.selectedIndex].value);
+			localStorage.setItem("bgcolour",bgcolourDisplay.options[bgcolourDisplay.selectedIndex].value);
+			localStorage.setItem("fgcolour",fgcolourDisplay.options[fgcolourDisplay.selectedIndex].value);
+			
+			localStorage.getItem("invert");
+			localStorage.getItem("temperature");
+			localStorage.getItem("bgcolour");
+			localStorage.getItem("fgcolour");
+			
+        return options;
+      };
+
+      var submitButton = document.getElementById("save_button");
+      submitButton.addEventListener("click", 
+        function() {
+          console.log("Submit");
+          var options = saveOptions();
+		// Something like this to get query variables.
+		function getQueryParam(variable, default_) {
+			var query = location.search.substring(1);
+			var vars = query.split('&');
+			for (var i = 0; i < vars.length; i++) {
+				var pair = vars[i].split('=');
+				if (pair[0] == variable)
+					return decodeURIComponent(pair[1]);
+			}
+			return default_ || false;
+		}	
+		var return_to = getQueryParam('return_to', 'pebblejs://close#');
+		document.location = return_to + encodeURIComponent(JSON.stringify(options));
+      }, 
+      false);*/
+  
+  </script>
+</body>
+</html>
