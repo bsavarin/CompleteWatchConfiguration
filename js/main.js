@@ -23,7 +23,7 @@
         return options;
       };
 
-      var submitButton = document.getElementById("save_button");
+      var submitButton = document.getElementById("submitButton");
       submitButton.addEventListener("click", 
         function() {
           console.log("Submit");
