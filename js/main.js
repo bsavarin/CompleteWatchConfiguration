@@ -15,15 +15,11 @@
 		  "fgcolour": fgcolourDisplay.options[fgcolourDisplay.selectedIndex].value
 		}  
 
-			localStorage.setItem("invert", invertSelect.options[invertSelect.selectedIndex].value);
-			localStorage.setItem("temperature",tempDisplay.options[tempDisplay.selectedIndex].value);
-			localStorage.setItem("bgcolour",bgcolourDisplay.options[bgcolourDisplay.selectedIndex].value);
-			localStorage.setItem("fgcolour",fgcolourDisplay.options[fgcolourDisplay.selectedIndex].value);
-			
-			localStorage.getItem("invert");
-			localStorage.getItem("temperature");
-			localStorage.getItem("bgcolour");
-			localStorage.getItem("fgcolour");
+			localStorage.invert = options.invert;
+			localStorage.temperature = options.temperature;
+			localStorage.bgcolour = options.bgcolour;
+			localStorage.fgcolour = options.fgcolour;
+
 			
         return options;
       };
@@ -49,6 +45,6 @@
 					return decodeURIComponent(pair[1]);
 			}
 			return default_ || false;
-		}	
+		};	
 		
   
