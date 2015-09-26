@@ -86,10 +86,10 @@
 		  "fgcolour": fgcolourDisplay.options[fgcolourDisplay.selectedIndex].value
 		}; 
 
-			localStorage.invert = options.invert;
-			localStorage.temperature = options.temperature;
-			localStorage.bgcolour = options.bgcolour;
-			localStorage.fgcolour = options.fgcolour;
+			localStorage["invert"] = options.invert;
+			localStorage["temperature"] = options.temperature;
+			localStorage["bgcolour"] = options.bgcolour;
+			localStorage["fgcolour"] = options.fgcolour;
 
 		console.log('Got options: ' + JSON.stringify(options));	
         return options;
@@ -122,12 +122,11 @@
 		var fgcolourDisplay = document.getElementById("fgcolour_display");
 		
 		if(localStorage.invert) = {
-			invertSelect.value = localStorage.invert;
-			tempDisplay.value = localStorage.temperature;
-			bgcolourDisplay.value = localStorage.bgcolour;
-			fgcolourDisplay.value = localStorage.fgcolour;
+			invertSelect.value = localStorage["invert"];
+			tempDisplay.value = localStorage["temperature"];
+			bgcolourDisplay.value = localStorage["bgcolour"];
+			fgcolourDisplay.value = localStorage["fgcolour"];
 			}
 		})();
-
   </script>
   </html>
