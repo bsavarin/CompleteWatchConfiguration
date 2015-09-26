@@ -103,7 +103,7 @@
 			return default_ || false;
 		}	
 		//var return_to = getQueryParam('return_to', 'pebblejs://close#');
-		var return_to = getQueryParam('return_to', 'https:////cloudpebble.net/ide/emulator/config?')
+		var return_to = getQueryParam('return_to', 'https://cloudpebble.net/ide/emulator/config?');
 		document.location = return_to + encodeURIComponent(JSON.stringify(options));
       }, 
       false);
