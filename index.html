@@ -68,11 +68,10 @@
         <input id ="submit_button" type="button" class="item-button" value="SAVE">
       </div>
     </div>
+ </body>
  
  <script type="text/javascript" src="slate/dist/js/slate.js"></script>
- 
  <script>
-  //<script type="text/javascript" src="js/main.js">
   
    function getConfigData() {
         var invertSelect = document.getElementById("invert_select");
@@ -101,7 +100,7 @@
 		var vars = query.split('&');
 		for (var i = 0; i < vars.length; i++) {
 			var pair = vars[i].split('=');
-			if (pair[0] == variable)
+			if (pair[0] == variable) {
 				return decodeURIComponent(pair[1]);
 			}
 		}
@@ -129,8 +128,6 @@
 			fgcolourDisplay.value = localStorage.fgcolour;
 			}
 		})();
-	  	
-  </script>
 
-</body>
-</html>
+  </script>
+  </html>
