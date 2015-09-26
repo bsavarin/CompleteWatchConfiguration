@@ -73,6 +73,11 @@
  <script type="text/javascript" src="slate/dist/js/slate.js"></script>
  <script>
   
+	(function(){
+		loadOptions();
+		submitHandler();	
+	})();
+	
    function getConfigData() {
         var invertSelect = document.getElementById("invert_select");
 		var tempDisplay = document.getElementById("temp_display");
@@ -107,6 +112,7 @@
 	return defaultValue || false;
 	}	 
 
+	function submitHandler(){
 	  var submitButton = document.getElementById("submit_button");
 	  submitButton.addEventListener("click", function() {
 	  console.log("Submit");
@@ -114,8 +120,9 @@
 	  var return_to = getQueryParam('return_to', 'pebblejs://close#');
 	  document.location = return_to + encodeURIComponent(JSON.stringify(getConfigData()));
 	  });
+	}
 	  
-	 (function (){
+	function loadOptions(){
 	    var invertSelect = document.getElementById("invert_select");
 		var tempDisplay = document.getElementById("temp_display");
 		var bgcolourDisplay = document.getElementById("bgcolour_display");
@@ -126,7 +133,7 @@
 			tempDisplay.value = localStorage["temperature"];
 			bgcolourDisplay.value = localStorage["bgcolour"];
 			fgcolourDisplay.value = localStorage["fgcolour"];
-			}
-		})();
+		}
+	}
   </script>
   </html>
