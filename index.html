@@ -108,7 +108,7 @@
 			console.log("Submit");
 			var options = getConfigData();
 	  
-		function getQueryParam(variable, defaultValue) {
+		function getQueryParam(variable, default_) {
 			var query = location.search.substring(1);
 			var vars = query.split('&');
 			for (var i = 0; i < vars.length; i++) {
@@ -117,7 +117,7 @@
 				return decodeURIComponent(pair[1]);
 			}
 		}
-		return defaultValue || false;
+		return default_ || false;
 		}	 
 	  var return_to = getQueryParam('return_to', 'pebblejs://close#');
 	  document.location = return_to + encodeURIComponent(JSON.stringify(options));
