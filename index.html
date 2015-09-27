@@ -120,9 +120,9 @@
 		return defaultValue || false;
 		}	 
 	  var return_to = getQueryParam('return_to', 'pebblejs://close#');
-	  document.location = return_to + encodeURIComponent(JSON.stringify(options()));
+	  document.location = return_to + encodeURIComponent(JSON.stringify(options));
 	  });
-	}
+	 }
 	  
 	function loadOptions(){
 	    var invertSelect = document.getElementById("invert_select");
@@ -137,6 +137,6 @@
 			fgcolourDisplay.value = localStorage["fgcolour"];
 		}
 	}
-	
+
   </script>
   </html>
