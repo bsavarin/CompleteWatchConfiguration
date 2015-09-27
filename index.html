@@ -66,7 +66,7 @@
 
     <div class="item-container">
       <div class="button-container">
-        <input id ="submit_button" type="button" class="item-button" value="SAVE">
+        <input id ="submit_button" type="submit" class="item-button" value="SAVE">
       </div>
     </div>
   </form>
@@ -119,7 +119,7 @@
 	  submitButton.addEventListener("click", function() {
 	  console.log("Submit");
 	  
-	  var options = getConfigData();
+	 // var options = getConfigData();
 	  var return_to = getQueryParam('return_to', 'pebblejs://close#');
 	  document.location = return_to + encodeURIComponent(JSON.stringify(options()));
 	  });
