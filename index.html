@@ -14,7 +14,7 @@
 </head>
 
 <body>
-<form id="main-form">
+<div id="main-form">
   <H2 class="title">Complete Watch Configuration</H2>
     <div class="item-container">
       <div class="item-container-content">
@@ -69,7 +69,7 @@
         <input id ="submit_button" type="submit" class="item-button" value="SAVE">
       </div>
     </div>
-  </form>
+  </div>
  </body>
  
  <script type="text/javascript" src="slate/dist/js/slate.js"></script>
@@ -87,10 +87,10 @@
 		var fgcolourDisplay = document.getElementById("fgcolour_display");
 		
 		var options = {
-          "invert": invertSelect.options[invertSelect.selectedIndex].value,
-		  "temperature": tempDisplay.options[tempDisplay.selectedIndex].value,
-		  "bgcolour": bgcolourDisplay.options[bgcolourDisplay.selectedIndex].value,
-		  "fgcolour": fgcolourDisplay.options[fgcolourDisplay.selectedIndex].value
+          "invert": invertSelect.value,
+		  "temperature": tempDisplay.value,
+		  "bgcolour": bgcolourDisplay.value,
+		  "fgcolour": fgcolourDisplay.value
 		};
 			localStorage["invert"] = options.invert;
 			localStorage["temperature"] = options.temperature;
