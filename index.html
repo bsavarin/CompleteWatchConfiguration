@@ -101,14 +101,7 @@
         return options;
       }
 
-	function submitHandler(){
-	  var submitButton = document.getElementById("submit_button");
-	  submitButton.addEventListener("click", 
-		function() {
-			console.log("Submit");
-			var options = getConfigData();
-	  
-		function getQueryParam(variable, default_) {
+	function getQueryParam(variable, default_) {
 			var query = location.search.substring(1);
 			var vars = query.split('&');
 			for (var i = 0; i < vars.length; i++) {
@@ -118,7 +111,16 @@
 			}
 		}
 		return default_ || false;
-		}	 
+	}	
+	  
+	  
+	function submitHandler(){
+	  var submitButton = document.getElementById("submit_button");
+	  submitButton.addEventListener("click", 
+		function() {
+			console.log("Submit");
+			var options = getConfigData();
+	  
 	  var return_to = getQueryParam('return_to', 'pebblejs://close#');
 	  document.location = return_to + encodeURIComponent(JSON.stringify(options));
 	  });
