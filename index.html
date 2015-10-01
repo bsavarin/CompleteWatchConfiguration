@@ -87,12 +87,12 @@
 		var fgcolourDisplay = document.getElementById("fgcolour_display");
 		
 		var options = {
-          "invert": invertSelect[0].checked,
+          "invert": $invertSelect[0].checked,
 		  "temperature": tempDisplay.value,
 		  "bgcolour": bgcolourDisplay.value,
 		  "fgcolour": fgcolourDisplay.value
 		};
-			localStorage["invert"] = options.invert;
+			localStorage.invert = options.invert;
 			localStorage["temperature"] = options.temperature;
 			localStorage["bgcolour"] = options.bgcolour;
 			localStorage["fgcolour"] = options.fgcolour;
@@ -133,7 +133,7 @@
 		var fgcolourDisplay = document.getElementById("fgcolour_display");
 		
 		if(localStorage["invert"]) {
-			invertSelect[0].checked = localStorage["invert"] === "true";
+			$invertSelect[0].checked = localStorage.invert === "true";
 			tempDisplay.value = localStorage["temperature"];
 			bgcolourDisplay.value = localStorage["bgcolour"];
 			fgcolourDisplay.value = localStorage["fgcolour"];
