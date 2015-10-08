@@ -29,7 +29,8 @@
       <div class="item-container-content">
         <label class="item">
           Invert watchface
-          <input id="invert_select" type="checkbox" class="item-toggle" name="toggle-1">
+          <input id="invert_select" type="checkbox" class="item-toggle" name="toggle-1" value="on">
+		  <input id="invert_select" type="hidden" class="item-toggle" name="toggle-1" value="off">
         </label>
       </div>
       <div class="item-container-footer">
@@ -87,7 +88,7 @@
 		var fgcolourDisplay = document.getElementById("fgcolour_display");
 		
 		var options = {
-          "invert": invertSelect[0].value,
+          "invert": invertSelect.value,
 		  "temperature": tempDisplay.value,
 		  "bgcolour": bgcolourDisplay.value,
 		  "fgcolour": fgcolourDisplay.value
@@ -133,7 +134,7 @@
 		var fgcolourDisplay = document.getElementById("fgcolour_display");
 		
 		if(localStorage["invert"]) {
-			invertSelect[0].value = localStorage["invert"];
+			invertSelect.value = localStorage["invert"];
 			tempDisplay.value = localStorage["temperature"];
 			bgcolourDisplay.value = localStorage["bgcolour"];
 			fgcolourDisplay.value = localStorage["fgcolour"];
