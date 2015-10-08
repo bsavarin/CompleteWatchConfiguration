@@ -31,8 +31,7 @@
           Invert watchface
           <input id="invert_select" type="checkbox" class="item-toggle" name="toggle-1">
         </label>
-			<option value="Off"></option>
-			<option value="On"></option>
+			<option value="false"></option><option value="true"></option>
       </div>
       <div class="item-container-footer">
       </div>
@@ -135,7 +134,7 @@
 		var fgcolourDisplay = document.getElementById("fgcolour_display");
 		
 		if(localStorage["invert"]) {
-			invertSelect.value = localStorage["invert"];
+			invertSelect.value = localStorage["invert"] === "true";
 			tempDisplay.value = localStorage["temperature"];
 			bgcolourDisplay.value = localStorage["bgcolour"];
 			fgcolourDisplay.value = localStorage["fgcolour"];
