@@ -29,7 +29,7 @@
       <div class="item-container-content">
         <label class="item">
           Invert watchface
-		  <input id="invert_select" type="checkbox" class="item-toggle" name="toggle-1" <?php if($invert_select=="on"){ Echo "checked";} ?>>
+		  <input id="invert_select" type="checkbox" class="item-toggle" name="toggle-1">
         </label>
       </div>
       <div class="item-container-footer">
@@ -87,7 +87,7 @@
 		var fgcolourDisplay = document.getElementById("fgcolour_display");
 		
 		var options = {
-          "invert": invertSelect.value,
+          "invert": invertSelect.checked,
 		  "temperature": tempDisplay.value,
 		  "bgcolour": bgcolourDisplay.value,
 		  "fgcolour": fgcolourDisplay.value
