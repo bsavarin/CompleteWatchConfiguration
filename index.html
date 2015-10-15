@@ -81,7 +81,7 @@
 	})();
  
    function getConfigData() {
-        var invertSelect = document.getElementById("invert_select").checked ?"1":"0";
+        var invertSelect = document.getElementById("invert_select").checked?"1":"0";
 		var tempDisplay = document.getElementById("temp_display");
 		var bgcolourDisplay = document.getElementById("bgcolour_display");
 		var fgcolourDisplay = document.getElementById("fgcolour_display");
@@ -127,13 +127,13 @@
 	 }
 	  
 	function loadOptions(){
-	    var invertSelect = document.getElementById("invert_select").checked ?"1":"0";
+	    var invertSelect = document.getElementById("invert_select").checked?"1":"0";
 		var tempDisplay = document.getElementById("temp_display");
 		var bgcolourDisplay = document.getElementById("bgcolour_display");
 		var fgcolourDisplay = document.getElementById("fgcolour_display");
 		
 		if(localStorage["invert"]) {
-			invertSelect.value = localStorage["invert"];
+			invertSelect.checked = localStorage["invert"];
 			tempDisplay.value = localStorage["temperature"];
 			bgcolourDisplay.value = localStorage["bgcolour"];
 			fgcolourDisplay.value = localStorage["fgcolour"];
