@@ -64,7 +64,7 @@
          request.execute(function(resp) { 
            var calendars = resp.items; 
            appendPre('Check Console'); 
-           for (i=0;i=2;i++) 
+           for (i=0;i<calendars.length;i++) 
            { 
              listUpcomingEvents(calendars[i]['id']); 
            } 
