@@ -58,7 +58,7 @@
       }
 
       /**
-       * Print the summary and start datetime/date of the next ten events in
+       * Print the summary and start date time/date of the next three events in
        * the authorized user's calendar. If no events are found an
        * appropriate message is printed.
        */
@@ -68,7 +68,7 @@
           'timeMin': (new Date()).toISOString(),
           'showDeleted': false,
           'singleEvents': true,
-          'maxResults': 10,
+          'maxResults': 3,
           'orderBy': 'startTime'
         });
 
