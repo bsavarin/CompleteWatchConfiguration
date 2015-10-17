@@ -67,7 +67,7 @@
       function listCalendars() 
       {
         var request = gapi.client.calendar.calendarList.list();
-
+		
         request.execute(function(resp) {
           var calendars = resp.items;
           appendPre('Check Console');
@@ -90,6 +90,9 @@
               'calendarId': calendarId,
               'timeMin': (new Date()).toISOString(),
               'singleEvents': true,
+			  'showDeleted': false,
+			  'maxResults': 3,
+			  'orderBy': 'startTime'
             });
 
             request_events.execute(function(resp) {
