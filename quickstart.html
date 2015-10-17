@@ -56,15 +56,30 @@
       function loadCalendarApi() {
         gapi.client.load('calendar', 'v3', listUpcomingEvents);
       }
-		var calendar_id = new calendarIds();
+	  
+		function listCalendars()  
+       { 
+         var request = gapi.client.calendar.calendarList.list(); 
+  
+         request.execute(function(resp) { 
+           var calendars = resp.items; 
+           appendPre('Check Console'); 
+           for (i=0;i<calendars.length;i++) 
+           { 
+             listUpcomingEvents(calendars[i]['id']); 
+           } 
+         }); 
+       } 
+
       /**
        * Print the summary and start date time/date of the next three events in
        * the authorized user's calendar. If no events are found an
        * appropriate message is printed.
        */
-      function listUpcomingEvents() {
-        var request = gapi.client.calendar.events.list({
-          'calendarId': 'primary',
+      function listUpcomingEvents(calendarID) {
+        var calendarId = calendarID;
+		var request = gapi.client.calendar.events.list({
+          'calendarId': calendarId,
           'timeMin': (new Date()).toISOString(),
           'showDeleted': false,
           'singleEvents': true,
