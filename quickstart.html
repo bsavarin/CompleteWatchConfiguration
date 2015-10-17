@@ -14,7 +14,7 @@
         gapi.auth.authorize(
           {
             'client_id': CLIENT_ID,
-            'scope': SCOPES.join(' '),
+            'scope': SCOPES,
             'immediate': true
           }, handleAuthResult);
       }
