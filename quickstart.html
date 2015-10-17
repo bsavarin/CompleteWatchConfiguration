@@ -64,7 +64,7 @@
        */
       function listUpcomingEvents() {
         var request = gapi.client.calendar.events.list({
-          'calendarId': 'primary',
+          'calendarId': 'resource@email-address.com',
           'timeMin': (new Date()).toISOString(),
           'showDeleted': false,
           'singleEvents': true,
