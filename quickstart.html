@@ -56,7 +56,7 @@
       function loadCalendarApi() {
         gapi.client.load('calendar', 'v3', listUpcomingEvents);
       }
-
+		var calendar_id = new calendarIds();
       /**
        * Print the summary and start date time/date of the next three events in
        * the authorized user's calendar. If no events are found an
